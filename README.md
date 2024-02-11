@@ -18,8 +18,8 @@ To set up the environment to use this framework, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://your-repo-url.git
-cd your-repo-directory
+git clone https://git@github.com:ps602/Spectrogram-based-Audio-Enhancement-with-U-Net.git
+cd Spectrogram-based-Audio-Enhancement-with-U-Net
 
 # (Optional) Set up a virtual environment
 python -m venv env
