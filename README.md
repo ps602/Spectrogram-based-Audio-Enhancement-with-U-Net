@@ -1,5 +1,4 @@
 # Spectrogram-based-Audio-Enhancement-with-U-Net
-# Spectrogram-based Audio Enhancement with U-Net
 
 This repository contains the implementation of U-Net (baseline) and U-Net (with Time-Shift Convolution) for high-fideltiy audio reconstruction using Spectrograms. Users can easily switch between different models and choose between training and evaluation modes using command-line arguments.
 
