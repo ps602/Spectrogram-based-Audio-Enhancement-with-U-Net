@@ -4,7 +4,6 @@ import librosa
 import librosa.display
 import numpy as np
 import argparse
-from utils import *
 from models import *
 
 parser = argparse.ArgumentParser(description="something")
@@ -44,10 +43,15 @@ else:
         model.train_model()
 
 # Visualizing Inputs and Outputs
+directory = 'results'
+path = os.path.join(directory)
+os.makedirs(path, exist_ok=True)
+
 if args.method == 'eval':
     
     plt.title('Audio x Time Plot')
     librosa.display.waveshow(y, sr=sr)
+    plt.show()
     plt.savefig('results/input_wave.png')
     
     librosa.display.specshow(S_dB, sr=sr, x_axis='time', y_axis='mel')
@@ -64,7 +68,7 @@ if args.method == 'eval':
     plt.colorbar(format='%+2.0f dB')
     plt.title('Reconstructed Mel Spectrogram')
     plt.tight_layout()
-    plt.figsave(f'results/output_{args.model_name}.png')
+    plt.savefig(f'results/output_{args.model_name}.png')
     plt.show()
     
     ##Plotting the input Mel spectrogram
@@ -73,7 +77,7 @@ if args.method == 'eval':
     plt.colorbar(format='%+2.0f dB')
     plt.title('Input Mel Spectrogram')
     plt.tight_layout()
-    plt.figsave(f'results/output_{args.model_name}.png')
+    plt.savefig(f'results/output_{args.model_name}.png')
     plt.show()
 else:
     pass
